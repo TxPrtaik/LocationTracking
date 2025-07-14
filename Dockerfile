@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/springhost-0.0.1-SNAPSHOT.jar LocationTracking.jar
+COPY --from=build /target/LocationTracking-0.0.1-SNAPSHOT.jar LocationTracking.jar
 EXPOSE 8080
 ENTRYPOINT [ "java","-jar","LocationTracking.jar" ]
